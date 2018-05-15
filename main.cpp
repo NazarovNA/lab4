@@ -65,6 +65,8 @@ print_in_binary(const void* data, size_t size) {
 }
 
 
+char operatorr;
+int operant1,operant3,res;
 
 int
 main() {
@@ -93,10 +95,52 @@ main() {
     print_in_binary(&u8, sizeof(u8));
     cout << '\n';
 
-    
+    cin>>operant1>>operatorr>>operant3;
+    if(operatorr=='&') {
+        res = operant1 & operant3;
+        print_in_hex(&operant1, sizeof(operant1));
+        cout << operatorr;
+        print_in_hex(&operant3, sizeof(operant3));
+        cout << "=";
+        print_in_hex(&res, sizeof(res));
 
+        cout << '\n';
+        print_in_binary(&operant1, sizeof(operant1));
+        cout << operatorr;
+        print_in_binary(&operant3, sizeof(operant3));
+        cout << "=";
+        print_in_binary(&res, sizeof(res));
+    }
+    if(operatorr=='|') {
+        res = operant1 | operant3;
+        print_in_hex(&operant1, sizeof(operant1));
+        cout << operatorr;
+        print_in_hex(&operant3, sizeof(operant3));
+        cout << "=";
+        print_in_hex(&res, sizeof(res));
 
+        cout << '\n';
+        print_in_binary(&operant1, sizeof(operant1));
+        cout << operatorr;
+        print_in_binary(&operant3, sizeof(operant3));
+        cout << "=";
+        print_in_binary(&res, sizeof(res));
+    }
+    if(operatorr=='^') {
+        res = operant1 ^ operant3;
+        print_in_hex(&operant1, sizeof(operant1));
+        cout << operatorr;
+        print_in_hex(&operant3, sizeof(operant3));
+        cout << "=";
+        print_in_hex(&res, sizeof(res));
 
+        cout << '\n';
+        print_in_binary(&operant1, sizeof(operant1));
+        cout << operatorr;
+        print_in_binary(&operant3, sizeof(operant3));
+        cout << "=";
+        print_in_binary(&res, sizeof(res));
+    }
 
 
     return 0;
