@@ -42,9 +42,10 @@ bit_digit(uint8_t byte, uint8_t bit) {
 
 void
 print_in_binary(uint8_t byte) {
-    for (uint8_t bit = 7; bit > 0; bit--) {
+    for (uint8_t bit = 7; bit >0; bit--) {
         cout << bit_digit(byte, bit);
     }
+    cout << bit_digit(byte, 0);
 }
 
 
@@ -87,6 +88,16 @@ main() {
     cout << "u32 bytes: ";
     print_in_hex(&u32, sizeof(u32));
     cout << '\n';
+    uint8_t u8 = 3;
+    cout << "u32 bytes: ";
+    print_in_binary(&u8, sizeof(u8));
+    cout << '\n';
+
+    
+
+
+
+
 
     return 0;
 }
